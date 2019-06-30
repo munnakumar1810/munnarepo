@@ -1,0 +1,8 @@
+[28-Sep-2018 23:33:39 Asia/Kolkata] PHP Fatal error:  Cannot redeclare Usermodel::login() in /home/codekarl/public_html/e-shop/application/models/Usermodel.php on line 28
+[02-Nov-2018 00:07:56 Asia/Kolkata] PHP Fatal error:  Cannot redeclare Settings::site_settings() in /home/codekarl/public_html/e-shop/application/controllers/admin/Settings.php on line 53
+[10-Nov-2018 23:23:18 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/User.php on line 4
+[10-Nov-2018 23:23:28 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/User.php on line 4
+[10-Nov-2018 23:23:53 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/User.php on line 4
+[10-Nov-2018 23:23:54 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/Login.php on line 5
+[10-Nov-2018 23:25:32 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/User.php on line 4
+[10-Nov-2018 23:34:11 Asia/Kolkata] PHP Fatal error:  Class 'MY_Controller' not found in /home/codekarl/public_html/e-shop/application/controllers/Home.php on line 4
