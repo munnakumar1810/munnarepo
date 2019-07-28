@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Newsletter extends MY_Controller {
+class Enquiry extends MY_Controller {
 
 	public function __construct()
 	{
@@ -13,15 +13,15 @@ class Newsletter extends MY_Controller {
 	public function lists()
 	{
 		$data = array(
-			'title' => 'List of Newsletter ',
-			'page' => 'newsletter',
+			'title' => 'List of Enquiries',
+			'page' => 'enquiry',
 			'subpage' => ''
 		);
-		$data['list'] = $this->mymodel->get('newsletter');
+		$data['list'] = $this->mymodel->get('enquiries');
 
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/sidebar');
-		$this->load->view('admin/newsletter_list');
+		$this->load->view('admin/enquiry_list');
 		$this->load->view('admin/footer');
 	}
 
@@ -63,28 +63,8 @@ class Newsletter extends MY_Controller {
 			echo '';
 		}
 	}
-	public function delete($id = false)
-	{
-		if ($id != false) {
-
-			$where = array('newsletterId' => $id);
-			$data = $this->mymodel->get_by('newsletter', true, $where);
-
-			if (!$this->mymodel->delete('newsletter', $where)) {
-				
-				$msg = 'error';
-
-			} else {
-				
-				$msg = '["Subscribed User deleted successfully.", "success", "#A5DC86"]';
-			}
-			$this->session->set_flashdata('msg', $msg);
-		}
-		redirect(admin_url('newsletter/lists'),'refresh');
-	}
-
 
 }
 
-	/* End of file Newsletter.php */
-/* Location: ./application/controllers/Newsletter.php */
+/* End of file Enquiry.php */
+/* Location: ./application/controllers/Enquiry.php */

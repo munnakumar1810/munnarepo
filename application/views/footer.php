@@ -1,6 +1,8 @@
-<?php 
-   $settingfooter = $this->mymodel->getSettings();
-   ?>
+<?php
+$settingfooter = $this
+    ->mymodel
+    ->getSettings();
+?>
 </div>
 </div>
 </section>
@@ -13,7 +15,7 @@
                <ul class="row">
                   <li class="item free col-md-3">
                      <div class="icon">
-                        <img src="<?= base_url()?>frontend/image/new-image/icon-1.png" alt="Static Image">
+                        <img src="<?=base_url() ?>frontend/image/new-image/icon-1.png" alt="Static Image">
                      </div>
                      <div class="text">
                         <h5><a href="javascript:void(0);">Free shipping</a></h5>
@@ -22,7 +24,7 @@
                   </li>
                   <li class="item secure col-md-3">
                      <div class="icon">
-                        <img src="<?= base_url()?>frontend/image/new-image/icon-2.png" alt="Static Image">
+                        <img src="<?=base_url() ?>frontend/image/new-image/icon-2.png" alt="Static Image">
                      </div>
                      <div class="text">
                         <h5><a href="javascript:void(0);">Secure Payment</a></h5>
@@ -31,7 +33,7 @@
                   </li>
                   <li class="item support col-md-3">
                      <div class="icon">
-                        <img src="<?= base_url()?>frontend/image/new-image/icon-3.png" alt="Static Image">
+                        <img src="<?=base_url() ?>frontend/image/new-image/icon-3.png" alt="Static Image">
                      </div>
                      <div class="text">
                         <h5><a href="javascript:void(0);">Online support</a></h5>
@@ -40,7 +42,7 @@
                   </li>
                   <li class="item payment col-md-3">
                      <div class="icon">
-                        <img src="<?= base_url()?>frontend/image/new-image/icon-4.png" alt="Static Image">
+                        <img src="<?=base_url() ?>frontend/image/new-image/icon-4.png" alt="Static Image">
                      </div>
                      <div class="text">
                         <h5><a href="javascript:void(0);">Payment on Delivery</a></h5>
@@ -67,23 +69,43 @@
                      <div class="newsletter_promo"> get  special offers information.</div>
                   </div>
                   <div class="modcontent block_content">
-                     <?php if($this->session->flashdata('succ_sub')){ ?>
+                     <?php if ($this
+    ->session
+    ->flashdata('succ_sub'))
+{ ?>
                      <div class="alert alert-success">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong>Success!</strong> <?php echo $this->session->flashdata('succ_sub'); ?>
+                        <strong>Success!</strong> <?php echo $this
+        ->session
+        ->flashdata('succ_sub'); ?>
                      </div>
-                     <?php }else if($this->session->flashdata('err_sub')){  ?>
+                     <?php
+}
+else if ($this
+    ->session
+    ->flashdata('err_sub'))
+{ ?>
                      <div class="alert alert-danger">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong>Error!</strong> <?php echo $this->session->flashdata('err_sub'); ?>
+                        <strong>Error!</strong> <?php echo $this
+        ->session
+        ->flashdata('err_sub'); ?>
                      </div>
-                     <?php }else if($this->session->flashdata('warn_sub')){  ?>
+                     <?php
+}
+else if ($this
+    ->session
+    ->flashdata('warn_sub'))
+{ ?>
                      <div class="alert alert-warning">
                         <a href="#" class="close" data-dismiss="alert">&times;</a>
-                        <strong>Warning!</strong> <?php echo $this->session->flashdata('warn_sub'); ?>
+                        <strong>Warning!</strong> <?php echo $this
+        ->session
+        ->flashdata('warn_sub'); ?>
                      </div>
-                     <?php } ?>
-                     <form method="post" action="<?=base_url('home/subscribe')?>" class="form-group form-inline">
+                     <?php
+} ?>
+                     <form method="post" action="<?=base_url('home/subscribe') ?>" class="form-group form-inline">
                         <div class="input-group form-group required">
                            <div class="input-box">
                               <input type="email" required="" placeholder="Your email address..."  class="form-control"  name="email" size="55">
@@ -117,15 +139,15 @@
                   <div class="content-footer">
                      <div class="address">
                         <label><i class="fa fa-map-marker" aria-hidden="true"></i></label>
-                        <span><?= $settingfooter->address ?></span>
+                        <span><?=$settingfooter->address ?></span>
                      </div>
                      <div class="phone">
                         <label><i class="fa fa-phone" aria-hidden="true"></i></label>
-                        <span><?= $settingfooter->phone ?></span>
+                        <span><?=$settingfooter->phone ?></span>
                      </div>
                      <div class="email">
                         <label><i class="fa fa-envelope"></i></label>
-                        <a href="javascript:void(0);"><?= $settingfooter->email ?></a>
+                        <a href="javascript:void(0);"><?=$settingfooter->email ?></a>
                      </div>
                   </div>
                </div>
@@ -137,22 +159,22 @@
                   </h4>
                   <ul class="links list-unstyled">
                      <li>
-                        <a title="About US" href="<?=base_url('about')?>">About US</a>
+                        <a title="About US" href="<?=base_url('about') ?>">About US</a>
                      </li>
                      <li>
-                        <a title="Contact us" href="<?=base_url('contact')?>">Contact us</a>
+                        <a title="Contact us" href="<?=base_url('contact') ?>">Contact us</a>
                      </li>
                      <li>
-                        <a title="Warranty And Services" href="<?=base_url('page/warranty')?>">Warranty And Services</a>
+                        <a title="Warranty And Services" href="<?=base_url('page/warranty') ?>">Warranty And Services</a>
                      </li>
                      <li>
-                        <a title="Support 24/7 Page" href="<?=base_url('page/support')?>">Support 24/7 Page</a>
+                        <a title="Support 24/7 Page" href="<?=base_url('page/support') ?>">Support 24/7 Page</a>
                      </li>
                      <li>
-                        <a title="Terms And Conditions" href="<?=base_url('page/term')?>">Terms And Conditions</a>
+                        <a title="Terms And Conditions" href="<?=base_url('page/term') ?>">Terms And Conditions</a>
                      </li>
                      <li>
-                        <a title="Policy" href="<?=base_url('page/policy')?>"> Privacy Policy</a>
+                        <a title="Policy" href="<?=base_url('page/policy') ?>"> Privacy Policy</a>
                      </li>
                   </ul>
                </div>
@@ -164,19 +186,19 @@
                   </h4>
                   <ul class="links list-unstyled">
                      <li>
-                        <a title="My Account" href="<?=base_url('user')?>">My Account</a>
+                        <a title="My Account" href="<?=base_url('user') ?>">My Account</a>
                      </li>
                      <li>
                         <a title="Checkout" href="##">Checkout</a>
                      </li>
                      <li>
-                        <a href="<?=base_url('user/wishlist')?>"> Wishlist</a>
+                        <a href="<?=base_url('user/wishlist') ?>"> Wishlist</a>
                      </li>
                      <li>
-                        <a title="Order History" href="<?=base_url('user/orderlist')?>">Order History</a>
+                        <a title="Order History" href="<?=base_url('user/orderlist') ?>">Order History</a>
                      </li>
                      <li>
-                        <a title="Your Transactions" href="<?=base_url('user/orderhistory')?>">Your Transactions</a>
+                        <a title="Your Transactions" href="<?=base_url('user/orderhistory') ?>">Your Transactions</a>
                      </li>
                   </ul>
                </div>
@@ -194,22 +216,22 @@
                      <div class="footer-social" style="margin-top: 2%;">
                         <h3 class="block-title text-left">Follow us</h3>
                         <div class="socials">
-                           <a href="<?= $settingfooter->facebook ?>" class="facebook" target="_blank">
+                           <a href="<?=$settingfooter->facebook ?>" class="facebook" target="_blank">
                               <i class="fa fa-facebook"></i>
                               <p>on</p>
                               <span class="name-social">Facebook</span>
                            </a>
-                           <a href="<?= $settingfooter->twitter ?>" class="twitter" target="_blank">
+                           <a href="<?=$settingfooter->twitter ?>" class="twitter" target="_blank">
                               <i class="fa fa-twitter"></i>
                               <p>on</p>
                               <span class="name-social">Twitter</span>
                            </a>
-                           <a href="<?= $settingfooter->google_plus ?>" class="google" target="_blank">
+                           <a href="<?=$settingfooter->google_plus ?>" class="google" target="_blank">
                               <i class="fa fa-google-plus"></i>
                               <p>on</p>
                               <span class="name-social">Google +</span>
                            </a>
-                           <a href="<?= $settingfooter->linkedin ?>" class="linkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>     
+                           <a href="<?=$settingfooter->linkedin ?>" class="linkedIn" target="_blank"><i class="fa fa-linkedin"></i></a>     
                         </div>
                      </div>
                   </div>
@@ -223,21 +245,29 @@
                      <div class="footer-directory-title">
                         <h4 class="label-link">Top Stores : Brand Directory | Store Directory</h4>
                         <ul class="footer-directory">
-                           <?php  $catlist= $this->mymodel->get_by("category",false,"status=1","categoryName"); 
-                              foreach ($catlist as $key => $c) { ?>
+                           <?php $catlist = $this
+    ->mymodel
+    ->get_by("category", false, "status=1", "categoryName");
+foreach ($catlist as $key => $c)
+{ ?>
                            <li>
-                              <h4><?= $c->categoryName ?>:</h4>
-                              <?php  $subCatlist= $this->mymodel->get_by("subcategory",false,"categoryId=$c->categoryId AND status=1","subcategoryName"); 
-                                 foreach ($subCatlist as $key => $suv) { 
-                                  $totalsub=count($subCatlist);
-                                  $lastsub=$totalsub-1;
-                                 
-                                  ?>
-                              <a href="<?=base_url()?>product/catproduct/<?=$suv->subcategoryId?>/<?= $suv->subcategoryName?>"><?= $suv->subcategoryName ?> </a> |
-                              <?php  } ?>
+                              <h4><?=$c->categoryName
+?>:</h4>
+                              <?php $subCatlist = $this
+        ->mymodel
+        ->get_by("subcategory", false, "categoryId=$c->categoryId AND status=1", "subcategoryName");
+    foreach ($subCatlist as $key => $suv)
+    {
+        $totalsub = count($subCatlist);
+        $lastsub = $totalsub - 1;
+?>
+                              <a href="<?=base_url() ?>product/catproduct/<?=$suv->subcategoryId ?>/<?=$suv->subcategoryName ?>"><?=$suv->subcategoryName ?> </a> |
+                              <?php
+    } ?>
                               |
                            </li>
-                           <?php  } ?>
+                           <?php
+} ?>
                         </ul>
                      </div>
                   </div>
@@ -251,9 +281,9 @@
    <div class="footer-bottom-block ">
       <div class=" container">
          <div class="row">
-            <div class="col-sm-5 copyright-text"> &copy; <?= date('Y')?> Peokart. All Rights Reserved. </div>
+            <div class="col-sm-5 copyright-text"> &copy; <?=date('Y') ?> Peokart. All Rights Reserved. </div>
             <div class="col-sm-7">
-               <div class="block-payment text-right"><img src="<?= base_url()?>frontend/image/demo/content/payment.png" alt="payment" title="payment" ></div>
+               <div class="block-payment text-right"><img src="<?=base_url() ?>frontend/image/demo/content/payment.png" alt="payment" title="payment" ></div>
             </div>
             <!--Back To Top-->
             <div class="back-to-top"><i class="fa fa-angle-up"></i><span> Top </span></div>
@@ -297,28 +327,27 @@
 <!-- Include Libs & Plugins
    ============================================ -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script type="text/javascript" src="<?= base_url()?>frontend/js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/owl-carousel/owl.carousel.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/themejs/libs.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/unveil/jquery.unveil.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/countdown/jquery.countdown.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/datetimepicker/moment.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/modernizr/modernizr-2.6.2.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/bootstrap-notify.min.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/themejs/application.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/themejs/homepage.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/themejs/so_megamenu.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/themejs/addtocart.js"></script>
-<script type="text/javascript" src="<?= base_url()?>frontend/js/toppanel.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/themejs/libs.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/unveil/jquery.unveil.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/countdown/jquery.countdown.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/dcjqaccordion/jquery.dcjqaccordion.2.8.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/datetimepicker/moment.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/jquery-ui/jquery-ui.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/modernizr/modernizr-2.6.2.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/bootstrap-notify.min.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/themejs/application.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/themejs/homepage.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/themejs/so_megamenu.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/themejs/addtocart.js"></script>
+<script type="text/javascript" src="<?=base_url() ?>frontend/js/toppanel.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBCrb9jMgk334tpDcleP0O-OXJ1iwkC0A&libraries=places&callback=initialize"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-<script src="<?= base_url()?>frontend/js/star-rating.js"></script> 
-
+<script src="<?=base_url() ?>frontend/js/star-rating.js"></script> 
 <script>
    window.setTimeout(function() {
      $(".alert").fadeTo(500, 0).slideUp(500, function(){
@@ -333,7 +362,7 @@
    
      $.ajax({
                type: "POST",
-               url: "<?php echo base_url();?>register/checkRefferal",
+               url: "<?php echo base_url(); ?>register/checkRefferal",
                data: "refid=" + refId,
                success: function (data) {
                
@@ -351,7 +380,7 @@
     
            $.ajax({
                type: "POST",
-               url: "<?php echo base_url();?>user/addCart",
+               url: "<?php echo base_url(); ?>user/addCart",
                data: "id=" + id,
                success: function (data) {
                
@@ -367,7 +396,7 @@
    
            $.ajax({
                type: "POST",
-               url: "<?php echo base_url();?>user/addWishlist",
+               url: "<?php echo base_url(); ?>user/addWishlist",
                data: "id=" + id+ "&redirect=" + currentUrl,
                success: function (data) {
                    window.location.reload();
@@ -383,7 +412,7 @@
            $('.portlet .tools a.reload').click();
            $.ajax({
                type: "GET",
-               url: "<?php echo base_url();?>user/deleteProduct",
+               url: "<?php echo base_url(); ?>user/deleteProduct",
                data: "id=" + id,
                success: function (data) {
    
@@ -401,7 +430,25 @@
      if(cnf){
        $.ajax({
                type: "GET",
-               url: "<?php echo base_url();?>user/deletewishlist",
+               url: "<?php echo base_url(); ?>user/deletewishlist",
+               data: "id=" + id,
+               success: function (data) {
+   
+                   window.location.reload();
+   
+   
+               }
+           });
+   
+     }
+   }
+   function deleteaddresslist(id)
+   {
+     cnf=confirm("Are you confirm to remove from address");
+     if(cnf){
+       $.ajax({
+               type: "GET",
+               url: "<?php echo base_url(); ?>user/deleteaddresslist",
                data: "id=" + id,
                success: function (data) {
    
@@ -418,7 +465,7 @@
    
        $.ajax({
            type: "GET",
-           url: "<?php echo base_url();?>user/updatecart",
+           url: "<?php echo base_url(); ?>user/updatecart",
            data: "id=" + id + "&product_id=" + product_id,
            success: function (data) {
                window.location.reload();
@@ -704,9 +751,6 @@
    }
    
    
-   
-   
-   
    function changeBazarStatus(bId, thisSwitch) {
    
    var newStatus;
@@ -813,8 +857,6 @@
    
    
    
-   
-   
    function changeDocumentStatus(dId, thisSwitch) {
    
    var newStatus;
@@ -866,9 +908,6 @@
    }
    
    
-   
-   
-   
    function changeCategoryStatus(cId, thisSwitch) {
    
    var newStatus;
@@ -918,10 +957,6 @@
    }); 
    
    }
-   
-   
-   
-   
    
    function changeSubCategoryStatus(sId, thisSwitch) {
    
@@ -1042,9 +1077,6 @@
    }
    
    
-   
-   
-   
    function showEnquiryDetails(enqId) {
    
    $.ajax({
@@ -1091,9 +1123,7 @@
    
    });
    
-   }
-   
-   
+   }  
    
    
    

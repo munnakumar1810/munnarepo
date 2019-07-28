@@ -6,14 +6,12 @@
 				<span class="hide-menu">Navigation</span>
 			</h3>
 		</div>
-
 		<!-- ADMIN PROFILE -->
 		<div class="user-profile">
 			<div class="dropdown user-pro-body">
 				<div>
 					<img src="<?= base_url('dist/images/users/') ?>user.png" alt="user-img" class="img-circle">
 				</div>
-
 				<a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 					System Admin <span class="caret"></span>
 				</a>
@@ -32,7 +30,6 @@
 				</ul>
 			</div>
 		</div>
-
 		<ul class="nav" id="side-menu">
 			<!-- ADMIN DASHBOARD -->
 			<li>
@@ -41,7 +38,6 @@
 					<span class="hide-menu">Dashboard </span>
 				</a>
 			</li>
-
 
 			<!-- BANNER MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'banner')? 'active' : ''; ?>">
@@ -65,7 +61,6 @@
 					
 				</ul>
 			</li>
-
 			<!-- COLLECTION MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'collection')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'collection')? 'active' : ''; ?>">
@@ -88,7 +83,6 @@
 					
 				</ul>
 			</li>
-
 			<!-- GALLERY MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'gallery')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'gallery')? 'active' : ''; ?>">
@@ -121,7 +115,6 @@
 				</ul>
 			</li>
 
-
 			<!-- CMS MANAGEMENT -->
 			<li>
 				<a href="<?= admin_url('cms/lists')?>" class="waves-effect <?= (!empty($page) && $page == 'cms')? 'active' : ''; ?>">
@@ -129,7 +122,6 @@
 					<span class="hide-menu">CMS Management </span>
 				</a>
 			</li>
-
 
 			<!-- ENQUIRY MANAGEMENT -->
 			<li>
@@ -139,7 +131,6 @@
 				</a>
 			</li>
 
-
 			<!-- ENQUIRY MANAGEMENT -->
 			<li>
 				<a href="<?= admin_url('newsletter/lists')?>" class="waves-effect <?= (!empty($page) && $page == 'newsletter')? 'active' : ''; ?>">
@@ -147,7 +138,6 @@
 					<span class="hide-menu">Newsletter Management </span>
 				</a>
 			</li>
-
 
 			<!-- USER MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'users')? 'active' : ''; ?>">
@@ -170,7 +160,6 @@
 					</li>
 				</ul>
 			</li>
-
 
 			<!-- SELLER MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'seller')? 'active' : ''; ?>">
@@ -199,7 +188,6 @@
 				</ul>
 			</li>
 
-
 			<!-- ORDER MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'order')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'order')? 'active' : ''; ?>">
@@ -227,7 +215,6 @@
 				</ul>
 			</li>
 
-
 			<!-- ESHOP MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'eshop')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'eshop')? 'active' : ''; ?>">
@@ -249,7 +236,6 @@
 					</li>
 				</ul>
 			</li>
-
 
 			<!-- PRODUCT MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'products')? 'active' : ''; ?>">
@@ -283,7 +269,6 @@
 				</ul>
 			</li>
 
-
 			<!-- MENU MANAGEMENT -->
 			<!-- <li class="<?= (!empty($page) && $page == 'menu_mgmt')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'menu_mgmt')? 'active' : ''; ?>">
@@ -305,7 +290,6 @@
 					</li>
 				</ul>
 			</li> -->
-
 
 			<!-- ADMIN MANAGEMENT -->
 			<li class="<?= (!empty($page) && $page == 'admin')? 'active' : ''; ?>">
@@ -329,7 +313,6 @@
 				</ul>
 			</li>
 
-
 			<!-- MANAGE LOOKUPS -->
 			<!-- <li class="<?= (!empty($page) && $page == 'lookups')? 'active' : ''; ?>">
 				<a href="javascript:void(0);" class="waves-effect <?= (!empty($page) && $page == 'lookups')? 'active' : ''; ?>">
@@ -351,7 +334,6 @@
 					</li>
 				</ul>
 			</li> -->
-
 
 			<!-- SETTING -->
 			<li class="<?= (!empty($page) && $page == 'settings')? 'active' : ''; ?>">

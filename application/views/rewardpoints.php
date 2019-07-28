@@ -30,8 +30,7 @@
                      <li><a href="<?=base_url('user/wishlist')?>">My Wishlist </a></li>
                      <li><a href="<?=base_url('user/orderhistory')?>">My Order History </a></li>
                      <li><a href="<?=base_url('user/pointlist')?>">Reward Points </a></li>
-                     <li><a href="<?=base_url('user/transhistory')?>">Transactions </a></li>
-                      <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
+                     <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
                      <li><a href="<?=base_url('user/changepass')?>">Change Password </a></li>
                      <li><a href="<?=base_url('login/logout')?>">Log Out</a></li>
 
@@ -41,34 +40,68 @@
          </div>
       </aside>
       <div id="content" class="col-sm-9">
-         <h2>Your Reward Points</h2>
-         <p>Total <b>0</b>.</p>
-         <div class="table-responsive">
-            <table class="table table-bordered table-hover">
-               <thead>
-                  <tr>
-                     <td class="text-left">Date Added</td>
-                     <td class="text-left">Description</td>
-                     <td class="text-right">Points</td>
-                  </tr>
-               </thead>
-               <tbody>
+ <h2>Reward  History</h2>
 
-                  <tr>
-                     <td class="text-center" colspan="3">You do not have any reward points!</td>
-                  </tr>
-               </tbody>
+ <div class="buttons clearfix">
 
-            </table>
-         </div>
-         <div class="row">
-            <div class="col-sm-6 text-left"></div>
-            <div class="col-sm-6 text-right">Showing 0 to 0 of 0 (0 Pages)</div>
-         </div>
-         <div class="buttons clearfix">
-            <div class="pull-right"><a href="javascript:void(0)" class="btn btn-primary">Continue</a></div>
-         </div>
+  <?php if(!empty($orderlist)) { ?>
+   <?php foreach ($orderlist as $ord): ?>
+    <div style="border: 2px solid #ccc; margin-bottom: 10px; padding: 20px;">
+     <div class="row">
+      <div class="col-sm-3"><p class="btn btn-danger"> Order No: <?=$ord->orderNo?></p></div>
       </div>
+     <hr>
+     <?php 
+     $sql="SELECT ct.orderDetailId, p.productId, p.productName, p.sku, p.url, ct.quantity, ct.price,(SELECT pimg.productImage FROM product_images AS pimg WHERE pimg.productId = p.productId LIMIT 1) AS productImage   
+     From order_details as ct
+     JOIN products AS p ON p.productId=ct.productId
+     JOIN subcategory AS sc ON sc.subcategoryId = p.subcategoryId
+     JOIN category AS c ON c.categoryId = sc.categoryId
+     WHERE ct.orderId = '".$ord->orderId."'";
+
+     $productlist = $this->Commonmodel->fetch_all_join($sql); ?>
+     <?php $total=0; ?>
+     <?php foreach ($productlist as $p): ?>
+       <div class="row">
+
+         <div class="col-sm-3">
+          <h4 class="btn btn-primary">First Level: </h4>
+       </div>
+       <div class=col-sm-3>
+         <h4 class="btn btn-info">Third Level: </h4>
+       </div>
+      <div class="col-sm-3">
+         <h4 class="btn btn-warning">Second Level: </h4>
+        
+     </div>
+     <div class="col-sm-3">
+      <h4 class="btn btn-success">End User Level: </h4>
+       
+     </div>
+   </div>
+   <hr>
+ <?php endforeach ?>
+
+
+ <div class="row"> 
+   <div class="col-sm-3">
+     <p> Ordered On  <?=date('d M Y', strtotime($ord->created));?></p>
+   </div>
+   <div class="col-sm-3 pull-right">
+      <?php  @$totalprice= ((@$p->quantity)*(@$p->price))?>
+       <?php @$total=@$totalprice + $total ?> 
+     <p class="">Ordered  Total $ <?= @$total?></p>
+   </div>
+ </div>
+</div>
+
+
+<?php endforeach ?>
+<?php } else {?>
+ <p class="error">You have not made any previous orders!</p>
+<?php } ?>
+</div>
+</div>
       
    </div>
 </div>

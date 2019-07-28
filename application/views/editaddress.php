@@ -30,7 +30,6 @@
                      <li><a href="<?=base_url('user/wishlist')?>">My Wishlist </a></li>
                      <li><a href="<?=base_url('user/orderhistory')?>">My Order History </a></li>
                      <li><a href="<?=base_url('user/pointlist')?>">Reward Points </a></li>
-                     <li><a href="<?=base_url('user/transhistory')?>">Transactions </a></li>
                       <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
                      <li><a href="<?=base_url('user/changepass')?>">Change Password </a></li>
                      <li><a href="<?=base_url('login/logout')?>">Log Out</a></li>
@@ -42,78 +41,94 @@
       </aside>
       <div id="content" class="col-sm-9">
         
-         <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+         <form action="<?= base_url('user/editaddress')?>" method="post" enctype="multipart/form-data" class="form-horizontal">
             <fieldset>
-               <legend>Your Personal Details</legend>
+               <legend>Address Details</legend>
+               <?php if($this->session->flashdata('success_msg')!=''){ ?>
+                     <div class="alert alert-success">
+                        <button type="button" class="close" data-dismiss="alert">&#10006;</button>
+                        <strong>
+                           <?php echo @$this->session->flashdata('success_msg');?>
+                        </strong>
+                     </div>
+                  <?php } ?>
+                  <?php if($this->session->flashdata('error')!=''){ ?>
+                     <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">&#10006;</button>
+                        <strong>
+                           <?php echo @$this->session->flashdata('error');?>
+                        </strong>
+                     </div>
+                  <?php } ?>
+
+                  <input type="hidden" name="contactId" value="<?=$edit->contactId?>" class="form-control">
+             
                <div class="form-group required">
-                  <label class="col-sm-2 control-label" for="input-firstname">First Name</label>
+                  <label class="col-sm-2 control-label" for="input-address1"> Address </label>
                   <div class="col-sm-10">
-                     <input type="text" name="name" value="" placeholder="First Name" id="first-name" class="form-control">
+                     <input type="text" name="address" value="<?=$edit->address?>" placeholder="address" id="address" class="form-control">
+                     <span class="error"><?php echo form_error('address'); ?></span>
+
                   </div>
                </div>
-               <div class="form-group required">
-                  <label class="col-sm-2 control-label" for="input-lastname">Last Name</label>
-                  <div class="col-sm-10">
-                     <input type="text" name="name" value="" placeholder="Last Name" id="last-name" class="form-control">
-                  </div>
-               </div>
-               <div class="form-group required">
-                  <label class="col-sm-2 control-label" for="input-company">Company</label>
-                  <div class="col-sm-10">
-                     <input type="text" name="company" value="" placeholder="Company Name" id="company-name" class="form-control">
-                  </div>
-               </div>
-               <div class="form-group required">
-                  <label class="col-sm-2 control-label" for="input-address1"> Address 1</label>
-                  <div class="col-sm-10">
-                     <input type="text" name="address1" value="" placeholder="address1" id="address1" class="form-control">
-                  </div>
-               </div>
-               <div class="form-group required">
-                  <label class="col-sm-2 control-label" for="input-address2">Last Address2</label>
-                  <div class="col-sm-10">
-                     <input type="text" name="address1" value="" placeholder="address2" id="address1" class="form-control">
-                  </div>
-               </div>
+              
                <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-city">City</label>
                   <div class="col-sm-10">
-                     <input type="text" name="city" value="" placeholder="city" id="city" class="form-control">
+                     <input type="text" name="city" value="<?=$edit->city?>" placeholder="City" id="city" class="form-control">
+                     <span class="error"><?php echo form_error('city'); ?></span>
                   </div>
                </div>
                <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-postcode">Post Code</label>
                   <div class="col-sm-10">
-                     <input type="text" name="postcode" value="" placeholder="postcode" id="postcode" class="form-control">
+                     <input type="text" name="postcode" value="<?=$edit->postcode?>" placeholder="Postcode" id="postcode" class="form-control">
+                     <span class="error"><?php echo form_error('postcode'); ?></span>
                   </div>
                </div>
                <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-country">Country</label>
                   <div class="col-sm-10">
-                     <input type="text" name="country" value="" placeholder="postcode" id="country" class="form-control">
+                     <input type="text" name="country" value="<?=$edit->country?>" placeholder="Country" id="country" class="form-control">
+                     <span class="error"><?php echo form_error('country'); ?></span>
                   </div>
                </div>
                <div class="form-group required">
                   <label class="col-sm-2 control-label" for="input-region-state">Region/State</label>
                   <div class="col-sm-10">
-                     <input type="text" name="region-state" value="" placeholder="region-state" id="region-state" class="form-control">
+                     <input type="text" name="region" value="<?=$edit->region?>" placeholder="region-state" id="region-state" class="form-control">
+                     <span class="error"><?php echo form_error('region'); ?></span>
+                  </div>
+               </div>
+               <div class="form-group required">
+                  <label class="col-sm-2 control-label" for="input-region-state">Address Type</label>
+                  <div class="col-sm-10">
+                     
+                     <select name="addressType" class="form-control">
+                        <option value="0" <?= ($edit->addressType == '0')? 'selected' : ''; ?>>Billing</option>
+                        <option value="1" <?= ($edit->addressType == '1')? 'selected' : ''; ?>>Shipping</option>
+                        <option value="2" <?= ($edit->addressType == '2')? 'selected' : ''; ?>>Pickup</option>
+                       
+                     </select>
+                     <span class="error"><?php echo form_error('region'); ?></span>
                   </div>
                </div>
                <div class="form-group">
                   <label class="col-sm-2 control-label">Default Address</label>
-                  <div class="col-sm-10">               <label class="radio-inline">
-                     <input type="radio" name="default" value="1">
+                  <div class="col-sm-10">              
+                   <label class="radio-inline">
+                     <input type="radio" name="default" value="1" <?= ($edit->defaultAddress == '1')? 'checked' : ''; ?>>
                   Yes</label>
                   <label class="radio-inline">
-                     <input type="radio" name="default" value="0" checked="checked">
+                     <input type="radio" name="default" value="0" <?= ($edit->defaultAddress == '0')? 'checked' : ''; ?>>
                   No</label>
                </div>
             </div>
          </fieldset>
          <div class="buttons clearfix">
-            <div class="pull-left"><a href="javascript:void(0)" class="btn btn-default">Back</a></div>
+            <div class="pull-left"><a href="<?= base_url('user/addresslist')?>" class="btn btn-default">Back</a></div>
             <div class="pull-right">
-               <input type="submit" value="Continue" class="btn btn-primary">
+               <input type="submit" value="Update" class="btn btn-primary">
             </div>
          </div>
       </form>

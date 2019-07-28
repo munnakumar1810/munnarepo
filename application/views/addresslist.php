@@ -29,8 +29,7 @@
                      <li><a href="<?=base_url('user/wishlist')?>">My Wishlist </a></li>
                      <li><a href="<?=base_url('user/orderhistory')?>">My Order History </a></li>
                      <li><a href="<?=base_url('user/pointlist')?>">Reward Points </a></li>
-                     <li><a href="<?=base_url('user/transhistory')?>">Transactions </a></li>
-                      <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
+                     <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
                      <li><a href="<?=base_url('user/changepass')?>">Change Password </a></li>
                      <li><a href="<?=base_url('login/logout')?>">Log Out</a></li>
 
@@ -104,15 +103,15 @@
                             <td class="text-left"><?php if($car->addressType=="0") {  echo "Billing"; } elseif ($car->addressType=="1") { echo "Shipping"; } elseif ($car->addressType=="2"){ echo "Pickup"; } ?></td>
                               
                                <td class="text-center">
-                                 <a href="##" class="btn btn-primary" data-toggle="tooltip" title="Edit">
+                                 <a href="<?= base_url('user/editaddress/'.$car->contactId) ?>" class="btn btn-primary" data-toggle="tooltip" title="Edit">
                                     <i class="fa fa-pencil"></i>
                                  </a>
-                                 <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onclick="deletewishlist('<?= $car->contactId ?>');" ><i class="fa fa-times-circle"></i></button></td>
+                                 <button type="button" data-toggle="tooltip" title="Remove" class="btn btn-danger" onclick="deleteaddresslist('<?= $car->contactId ?>');" ><i class="fa fa-times-circle"></i></button></td>
                            </tr>
                            
                         <?php $c++; endforeach ?>
                      <?php } else{ ?>
-                        <tr><td colspan="7">No address found in your address book</td></tr>
+                        <tr><td colspan="8">No address found in your address book</td></tr>
 
                      <?php } ?>
                   </tbody>

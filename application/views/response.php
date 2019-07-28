@@ -16,10 +16,10 @@
   
   <?php
 //Get req_id
-  $csrfToken = $_REQUEST['reqid'];
+  @$csrfToken = $_REQUEST['reqid'];
 
 //Get Client_ref
-  $clientRef = $_REQUEST['clientRef'];
+  @$clientRef = $_REQUEST['clientRef'];
 
 // This is the your private auth token. It must
 // never be used in the browser, only on your secure server

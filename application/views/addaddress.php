@@ -1,3 +1,4 @@
+
 <div class="clearfix"></div>
 <div class="innerpage-ban">
    <div class="container">
@@ -13,7 +14,7 @@
    <ul class="breadcrumb">
       <li><a href="<?=base_url()?>"><i class="fa fa-home"></i></a></li>
       <li><a href="javascript:void(0)">Account</a></li>
-      <li><a href="javascript:void(0)">Edit Address</a></li>
+      <li><a href="javascript:void(0)">Add New Address</a></li>
    </ul>
    <div class="row">
       <aside class="col-md-3 col-sm-4 col-xs-12 content-aside right_column sidebar-offcanvas">
@@ -29,8 +30,7 @@
                      <li><a href="<?=base_url('user/wishlist')?>">My Wishlist </a></li>
                      <li><a href="<?=base_url('user/orderhistory')?>">My Order History </a></li>
                      <li><a href="<?=base_url('user/pointlist')?>">Reward Points </a></li>
-                     <li><a href="<?=base_url('user/transhistory')?>">Transactions </a></li>
-                      <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
+                     <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
                      <li><a href="<?=base_url('user/changepass')?>">Change Password </a></li>
                      <li><a href="<?=base_url('login/logout')?>">Log Out</a></li>
 

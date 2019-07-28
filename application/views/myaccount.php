@@ -29,8 +29,7 @@
                      <li><a href="<?=base_url('user/wishlist')?>">My Wishlist </a></li>
                      <li><a href="<?=base_url('user/orderhistory')?>">My Order History </a></li>
                      <li><a href="<?=base_url('user/pointlist')?>">Reward Points </a></li>
-                     <li><a href="<?=base_url('user/transhistory')?>">Transactions </a></li>
-                      <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
+                     <li><a href="<?=base_url('user/addresslist')?>">Address Book </a></li>
                      <li><a href="<?=base_url('user/changepass')?>">Change Password </a></li>
                      <li><a href="<?=base_url('login/logout')?>">Log Out</a></li>
                      
